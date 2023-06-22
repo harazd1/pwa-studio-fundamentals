@@ -21,6 +21,7 @@ const TagList = () => {
           setMessage(data.error);
         } else {
           setMessage(data.message);
+          setEmail('');
         }
       })
       .catch((error) => {

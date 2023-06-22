@@ -8,17 +8,17 @@ function localIntercept(targets) {
   const targetables = Targetables.using(targets);
 
   // Create a React component targetable linked to the productFullDetail.js file
-  const ProductDetails = targetables.reactComponent(
+  const PageDetails = targetables.reactComponent(
     "@magento/venia-ui/lib/components/Main/main.js"
   );
 
   // Add an import statement to the productFullDetail.js file and
   // return the SingleImportStatement object
-  const TagList = ProductDetails.addImport("{TagList} from 'tagList'");
+  const TagList = PageDetails.addImport("{TagList} from 'tagList'");
 
   // Insert the TagList component after the product description and pass in the
   // new categoriesListData object added to the useProductFullDetails() hook
-  ProductDetails.insertAfterJSX(
+  PageDetails.insertAfterJSX(
     "<Header />",
     `<${TagList} />`
   );
